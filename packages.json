@@ -42,6 +42,17 @@
             "uploadTime": "2026-08-14T06:59:05Z",
             "downloadUrl": "apks/SkyLend/debug/skylend_debug_20260814.apk"
           }
+        ],
+        "release": [
+          {
+            "version": "1.1.4",
+            "filename": "skylend_release_1.1.4.apk",
+            "description": "v1.1.4",
+            "buildType": "release",
+            "size": 9193146,
+            "uploadTime": "2026-08-14T07:20:31Z",
+            "downloadUrl": "apks/SkyLend/release/skylend_release_1.1.4.apk"
+          }
         ]
       }
     }
