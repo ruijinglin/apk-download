@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APK 下载中心</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- 侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">📦</span>
+          <span class="logo-text">APK 下载中心</span>
+        </div>
+      </div>
+      <nav class="product-nav" id="product-nav"></nav>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="展开菜单">☰</button>
+        <div class="topbar-title" id="topbar-title">APK 下载中心</div>
+      </header>
+
+      <div class="content-area" id="content-area">
+        <!-- 空状态 -->
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <div class="empty-icon">📭</div>
+          <h3>暂无可下载的安装包</h3>
+        </div>
+
+        <!-- 产品详情 -->
+        <div class="product-detail" id="product-detail" style="display:none;">
+          <div class="product-hero" id="product-hero"></div>
+          <div class="build-tabs" id="build-tabs"></div>
+          <div class="version-list" id="version-list"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- 二维码弹窗 -->
+  <div class="modal-overlay" id="qr-modal" style="display:none;">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()" aria-label="关闭">✕</button>
+      <div class="modal-body">
+        <h3 id="qr-title"></h3>
+        <div class="qr-wrapper">
+          <div id="qr-canvas"></div>
+        </div>
+        <p class="qr-hint">使用手机浏览器扫描二维码下载</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 二维码生成库（纯前端） -->
+  <script src="qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
