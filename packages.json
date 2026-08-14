@@ -16,6 +16,23 @@
           }
         ]
       }
+    },
+    "SmartNaira": {
+      "name": "SmartNaira",
+      "description": "",
+      "builds": {
+        "debug": [
+          {
+            "version": "5.1.5",
+            "filename": "SmartNaira_debug_5.1.5_20260814.apk",
+            "description": "debug",
+            "buildType": "debug",
+            "size": 31839021,
+            "uploadTime": "2026-08-14T06:40:23Z",
+            "downloadUrl": "apks/SmartNaira/debug/SmartNaira_debug_5.1.5_20260814.apk"
+          }
+        ]
+      }
     }
   }
 }
