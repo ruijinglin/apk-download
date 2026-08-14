@@ -47,6 +47,18 @@ function countBuilds(product) {
   return c;
 }
 
+// 查找线上版本或最新版本
+function findOnlineOrLatest(product, types) {
+  // 优先找标记了 isOnline 的
+  for (const t of types) {
+    for (const v of (product.builds[t] || [])) {
+      if (v.isOnline) return v;
+    }
+  }
+  // 没有线上标记就返回第一个构建类型的第一个版本
+  return product.builds[types[0]]?.[0] || null;
+}
+
 // 加载数据
 async function loadData() {
   try {
@@ -130,7 +142,7 @@ function renderDetail(key) {
     state.activeBuildType = types[0];
   }
 
-  const latest = p.builds[types[0]]?.[0];
+  const latestOrOnline = findOnlineOrLatest(p, types);
   const color = getColor(key);
 
   document.getElementById('product-hero').innerHTML = `
@@ -142,9 +154,9 @@ function renderDetail(key) {
       </div>
     </div>
     <div class="hero-actions">
-      ${latest ? `
-        <a href="${latest.downloadUrl}" class="btn btn-accent" download>⬇ 下载最新版</a>
-        <button class="btn btn-success" onclick="showQR('${key}','${latest.downloadUrl}','v${latest.version}')">📷 扫码</button>
+      ${latestOrOnline ? `
+        <a href="${latestOrOnline.downloadUrl}" class="btn btn-accent" download>⬇ 下载${latestOrOnline.isOnline ? '线上版' : '最新版'}</a>
+        <button class="btn btn-success" onclick="showQR('${key}','${latestOrOnline.downloadUrl}','v${latestOrOnline.version}')">📷 扫码</button>
       ` : ''}
     </div>`;
 
@@ -170,10 +182,10 @@ function renderVersions(versions) {
   }
 
   el.innerHTML = versions.map((v, i) => `
-    <div class="version-card ${i === 0 ? 'is-latest' : ''}">
+    <div class="version-card ${v.isOnline ? 'is-online' : (i === 0 ? 'is-latest' : '')}">
       <div class="version-badge">
         <span class="version-number">v${v.version}</span>
-        ${i === 0 ? '<span class="latest-tag">最新</span>' : ''}
+        ${v.isOnline ? '<span class="online-tag">线上版</span>' : (i === 0 ? '<span class="latest-tag">最新</span>' : '')}
       </div>
       <div class="version-detail">
         <div class="version-filename">${v.filename}</div>

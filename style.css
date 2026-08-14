@@ -193,6 +193,13 @@ body {
 
 .version-card:hover { border-color: var(--accent); background: var(--bg-hover); }
 .version-card.is-latest { border-color: var(--success); background: var(--success-subtle); }
+.version-card.is-online { border-color: var(--warning); background: var(--warning-subtle); }
+
+.online-tag {
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px; color: var(--warning);
+  background: var(--warning-subtle); padding: 2px 8px; border-radius: 4px;
+}
 
 .version-badge { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 64px; }
 .version-number { font-size: 0.95rem; font-weight: 700; }
