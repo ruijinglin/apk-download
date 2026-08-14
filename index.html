@@ -7,7 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="layout">
+  <!-- 密码验证层 -->
+  <div class="auth-gate" id="auth-gate">
+    <div class="auth-card">
+      <div class="auth-icon">🔒</div>
+      <h2>APK 下载中心</h2>
+      <p>请输入访问密码</p>
+      <form id="auth-form" onsubmit="return handleLogin(event)">
+        <input type="password" id="auth-input" class="auth-input" placeholder="输入密码" autocomplete="off" autofocus>
+        <button type="submit" class="auth-btn">进入</button>
+      </form>
+      <p class="auth-error" id="auth-error" style="display:none;">密码错误</p>
+    </div>
+  </div>
+
+  <!-- 主应用（登录后显示） -->
+  <div class="layout" id="app-layout" style="display:none;">
     <!-- 侧边栏 -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
@@ -59,6 +74,7 @@
 
   <!-- 二维码生成库（纯前端） -->
   <script src="qrcode.min.js"></script>
+  <script src="auth.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

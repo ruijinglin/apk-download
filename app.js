@@ -235,5 +235,4 @@ document.getElementById('qr-modal').addEventListener('click', e => { if (e.targe
 document.getElementById('menu-toggle').addEventListener('click', () => { document.getElementById('sidebar').classList.toggle('open'); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-// 启动
-loadData();
+// 启动（由 auth.js 验证通过后调用 loadData）
