@@ -31,6 +31,17 @@
             "uploadTime": "2026-08-14T06:40:23Z",
             "downloadUrl": "apks/SmartNaira/debug/SmartNaira_debug_5.1.5_20260814.apk"
           }
+        ],
+        "release": [
+          {
+            "version": "5.1.5",
+            "filename": "SmartNaira_release_5.1.5_20260814.apk",
+            "description": "v5.1.5",
+            "buildType": "release",
+            "size": 15752631,
+            "uploadTime": "2026-08-14T06:44:24Z",
+            "downloadUrl": "apks/SmartNaira/release/SmartNaira_release_5.1.5_20260814.apk"
+          }
         ]
       }
     }
