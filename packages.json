@@ -52,6 +52,15 @@
       "builds": {
         "debug": [
           {
+            "version": "1.1.6",
+            "filename": "skylend_debug_v1.1.6_20261113.apk",
+            "description": "v1.1.6",
+            "buildType": "debug",
+            "size": 18529784,
+            "uploadTime": "2026-11-13T11:10:52Z",
+            "downloadUrl": "apks/SkyLend/debug/skylend_debug_v1.1.6_20261113.apk"
+          },
+          {
             "version": "1.1.5",
             "filename": "skylend_debug_v1.1.5_20260824.apk",
             "description": "v1.1.5",
